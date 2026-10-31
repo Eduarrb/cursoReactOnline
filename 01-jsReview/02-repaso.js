@@ -123,43 +123,24 @@ const data = [
 ];
 
 function getBooks() {
-    return data;
+	return data;
 }
 
 function getBook(id) {
-    return data.find(libro => libro.id === id)
+	return data.find(libro => libro.id === id);
 }
 
-const libro = getBook(1);
+// TEMPLATE STRINGS - TEMPLATE LITERALS
 
-// const titulo = libro.title;
-// const autor = libro.author;
+const libro = getBook(2);
+const {title, author, pages, publicationDate, genres, hasMovieAdaptation} = libro;
+console.log(libro);
 
-// DESTRUCTURING
-const {title, author, pages, genres} = libro; // objeto
+const resumen = "La pelicula el ciberiano tiene 3300 paginas el autor es Stanislaw Lem";
+const resumen2 = "La pelicula " + title + " tiene " + pages + "páginas  y el autor es " + author;
 
-// console.log(title);
-const primerGenero = genres[0];
-const segundoGenero = genres[1];
-// console.log(segundoGenero);
-// console.log(genres)
+console.log(resumen2);
 
-const [primero, segundo, tercero] = genres;
-// console.log(segundo);
-
-
-// const generos = genres;
-// console.log(genres)
-// console.log(generos)
-
-// generos[0] = 'fantasia';
-// console.log(generos)
-// console.log(genres)
-
-const generos = [...genres];
-console.log(genres);
-console.log(generos);
-
-generos[0] = 'fantasia';
-console.log(generos);
-console.log(genres)
+// backticks o tildes invertidas alt + 96 o alt gr + }
+const resumen3 = `La película ${title} tiene ${pages} páginas y el autor es: ${author}`;
+console.log(resumen3);
